@@ -21,7 +21,8 @@ func Signal(sig os.Signal) error {
 	return nil
 }
 var conf Config // con
-redshirt.Register(conf,redshirt.SIGHUP)
+redshirt.Register(conf,redshirt.SIGHUP) 
+// When a SIGHUP is sent to the program, the conf.Signal function will be run.
 ```
 
 redshirt also has anonymous function support by using RegisterFunc:
