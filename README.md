@@ -40,7 +40,7 @@ Multiple functions can be registered to the same signal. The functions
 will be executed in the order they were registered.
 For example:
 ```
-redshirt.Register(ReloadConfig(),redshirt.SIGHUP)
-redshirt.Register(SendEmail(),redshirt.SIGHUP)
-redshirt.Register(LogToFile(),redshirt.SIGHUP)
+redshirt.Register(foo,redshirt.SIGHUP)
+redshirt.Register(bar,redshirt.SIGHUP)
+redshirt.Register(boo,redshirt.SIGHUP)
 ```
