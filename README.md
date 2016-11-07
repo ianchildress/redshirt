@@ -1,6 +1,6 @@
 # redshirt - A signal handling package for Go
 
-*This is a quick and dirty readme. I'll polish it up shortly*
+*This is a quick and dirty readme and thus can't guarantee 100% accuracy.  I'll polish it up shortly. *
 
 redshirt is a package for handling signals and/or dying gracefully
 The package is used by registering a function with one or more signals
