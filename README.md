@@ -4,7 +4,12 @@
 
 redshirt is a package for handling signals and/or dying gracefully.
 The package is used by registering a function with one or more signals.
-When the program receives that signal, the function is run.
+When the program receives that signal, the Signal callback function is run.
+
+To add callback support for any of your existing types, simply extend it with the following signature:
+```
+Signal(os.Signal) error
+```
 
 Example: If you want to reload your config when a SIGHUP signal
 is detected, you can import the redshirt package and do the following:
