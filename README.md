@@ -20,8 +20,10 @@ func Signal(sig os.Signal) error {
 	// things to reload my config file.
 	return nil
 }
-var conf Config // con
+
+// Pass in the interface along with the signals to the Register function.
 redshirt.Register(conf,redshirt.SIGHUP) 
+
 // When a SIGHUP is sent to the program, the conf.Signal function will be run.
 ```
 
