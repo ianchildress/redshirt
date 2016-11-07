@@ -9,7 +9,19 @@ When the program receives that signal, the function is run.
 Example: If you want to reload your config when a SIGHUP signal
 is detected, you can import the redshirt package and do the following:
 ```
-redshirt.Register(myConfigReloadFunction(),redshirt.SIGHUP)
+type Config struct {
+  file string
+} 
+
+// The Signal method fulfills the interface requirement. Add a method
+// to your type with the following signature.
+func Signal(sig os.Signal) error {
+	// This is my callback function. In here I can do
+	// things to reload my config file.
+	return nil
+}
+var conf Config // con
+redshirt.Register(conf,redshirt.SIGHUP)
 ```
 
 redshirt also has anonymous function support by using RegisterFunc:
